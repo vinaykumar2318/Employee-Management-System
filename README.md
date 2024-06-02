@@ -11,7 +11,7 @@ This is a simple Employee Management System web application built using Python a
 
 ## Usage
 
-1. Access the Django admin interface by navigating to [http://localhost:8000/admin/](http://localhost:8000/admin/) in your web browser.
+1. Access the application in your web browser at [http://localhost:8000/](http://localhost:8000/)
 2. Log in using the superuser credentials you created during the setup process.
 3. Once logged in, you can manage your application's data through the admin interface, including viewing, adding, removing, and filtering employee details.
 4. For certain features that require authentication, such as accessing the admin interface, you must log in with appropriate credentials.
