@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Employees</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #e9ecef;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #343a40;
+            font-size: 2.5em;
+        }
+        table {
+            margin-top: 20px;
+        }
+        th, td {
+            text-align: center;
+            padding: 10px;
+        }
+        th {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+        tbody tr:nth-child(odd) {
+            background-color: #f8f9fa;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+        tbody tr:hover {
+            background-color: #d6e4f2;
+        }
+        hr {
+            border: 0;
+            height: 2px;
+            background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>All Employees</h1>
+        <hr>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>    
+                    <th scope="col">Id</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Bonus</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Hire Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for emp in emps %}
+                <tr>
+                    <th scope="row">{{ emp.id }}</th>
+                    <td>{{ emp.firstName }}</td>
+                    <td>{{ emp.lastName }}</td>
+                    <td>{{ emp.salary }}</td>
+                    <td>{{ emp.bonus }}</td>
+                    <td>{{ emp.phone }}</td>
+                    <td>{{ emp.role.name }}</td>
+                    <td>{{ emp.dept.name }}</td>
+                    <td>{{ emp.dept.location }}</td>
+                    <td>{{ emp.hireDate }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
